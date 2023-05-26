@@ -15,13 +15,16 @@
 
     <script>
         $(document).ready(() => {
+            //Connection
             const connection = new signalR.HubConnectionBuilder()
-                .withUrl("https://localhost:7286/chathub")
+                .withUrl("https://localhost:7215/chathub")
                 .build();
-            connection.start();
-            $(".disabled").attr("disabled", "disabled");
-            $("body").on("click", ".users", function () {
 
+            connection.start();
+
+            $(".disabled").attr("disabled", "disabled");
+
+            $("body").on("click", ".users", function () {
                 $(".users").each((index, item) => {
                     item.classList.remove("active");
                 });
@@ -61,7 +64,6 @@
 
             connection.on("clientJoined", (nickName) => {
                 $("#clientJoinedTrigger").html(`${nickName} Giriş Yaptı.`);
-
                 $("#clientJoinedTrigger").fadeIn(2000, () => {
                     setTimeout(() => {
                         $("#clientJoinedTrigger").fadeOut(2000);
@@ -78,6 +80,7 @@
                     $("#_clients").append(user);
                 });
             });
+
             connection.on("receiveMessage", (message, nickname) => {
                 //console.log(message)
                 const _message = $(".message").clone();
@@ -87,6 +90,7 @@
                 $(".messages").append(_message);
             })
 
+            
             $("#btnSend").click(() => {
                 const clientName = $(".users.active").first().html();
                 const message = $("#txtMessage").val();
@@ -95,10 +99,11 @@
                 const _message = $(".message").clone();
                 _message.removeClass("message");
                 _message.find("p").html(message);
-                _message.find("h5")[1].innerHTML = "sen";
+                _message.find("h5")[1].innerHTML = "Sen";
                 $(".messages").append(_message);
 
             });
+            
             $("#btnCreateGroup").click(() => {
                 connection.invoke("AddGroup", $("#groupName").val());
             });
@@ -110,15 +115,16 @@
                 });
                 $(".rooms").html(options);
             });
+
             $("#btnJoinGroups").click(() => {
                 let groupNames = [];
                 $(".rooms option:Selected").map((i, e) => {
                     groupNames.push(e.innerHTML);
-
                 });
                 connection.invoke("AddClientToGroup", groupNames);
 
             });
+
             let _groupName = "";
             $(".rooms").change(function () {
                 let groupName = $(this).val();
@@ -185,7 +191,7 @@
                         Seçili Gruba Mesaj Gönder
                     </button>
                     <button type="button" class="btn btn-warning rightButton disabled" id="btnSend">
-                        Herkese Gönder
+                        Gönder
                     </button>
 
                     <br /><br /><br />
