@@ -15,6 +15,7 @@ namespace SignalRChatServerExample
                   .AllowAnyMethod()
                   .SetIsOriginAllowed(x=>true)));
             builder.Services.AddRazorPages();
+
             builder.Services.AddSignalR();
 
             var app = builder.Build();
