@@ -29,3 +29,12 @@ C:\Projects\GitHub\SignalRChat\SignalRChatServerExample\SignalRChatServerExample
 C:\Projects\GitHub\SignalRChat\SignalRChatServerExample\SignalRChatServerExample\obj\Debug\net6.0\SignalRChatServerExample.pdb
 C:\Projects\GitHub\SignalRChat\SignalRChatServerExample\SignalRChatServerExample\obj\Debug\net6.0\SignalRChatServerExample.genruntimeconfig.cache
 C:\Projects\GitHub\SignalRChat\SignalRChatServerExample\SignalRChatServerExample\obj\Debug\net6.0\ref\SignalRChatServerExample.dll
+C:\Projects\GitHub\SignalRChat\SignalRChatServerExample\SignalRChatServerExample\bin\Debug\net6.0\MessagePack.dll
+C:\Projects\GitHub\SignalRChat\SignalRChatServerExample\SignalRChatServerExample\bin\Debug\net6.0\MessagePack.Annotations.dll
+C:\Projects\GitHub\SignalRChat\SignalRChatServerExample\SignalRChatServerExample\bin\Debug\net6.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Projects\GitHub\SignalRChat\SignalRChatServerExample\SignalRChatServerExample\bin\Debug\net6.0\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Projects\GitHub\SignalRChat\SignalRChatServerExample\SignalRChatServerExample\bin\Debug\net6.0\Microsoft.AspNetCore.SignalR.Protocols.MessagePack.dll
+C:\Projects\GitHub\SignalRChat\SignalRChatServerExample\SignalRChatServerExample\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Projects\GitHub\SignalRChat\SignalRChatServerExample\SignalRChatServerExample\bin\Debug\net6.0\Microsoft.Extensions.Features.dll
+C:\Projects\GitHub\SignalRChat\SignalRChatServerExample\SignalRChatServerExample\bin\Debug\net6.0\System.IO.Pipelines.dll
+C:\Projects\GitHub\SignalRChat\SignalRChatServerExample\SignalRChatServerExample\obj\Debug\net6.0\SignalRChatServerExample.csproj.CopyComplete

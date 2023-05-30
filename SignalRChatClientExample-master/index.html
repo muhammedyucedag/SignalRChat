@@ -9,6 +9,7 @@
     <script src="scripts/bootstrap.min.js"></script>
     <script src="scripts/jquery.min.js"></script>
     <script src="scripts/signalr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@microsoft/signalr-protocol-msgpack@7.0.5/dist/browser/signalr-protocol-msgpack.min.js"></script>
 
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/style.css">
@@ -17,9 +18,9 @@
         $(document).ready(() => {
             //Connection
             const connection = new signalR.HubConnectionBuilder()
-                .withUrl("https://localhost:7215/chathub")
+                .withUrl("http://localhost:5001/hubs/message",{ accessTokenFactory: () => "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImU4ODBjNGM5LWJkYzUtNGE3OS04MDgxLThkNjNjOWE5NTk3MCIsIm5iZiI6MTY4NTA4MzI2OCwiZXhwIjoxNjg1MTE5MjY4LCJpc3MiOiJ3d3cub3JnYW5pa21lc3NhZ2luZ2FwaS5jb20iLCJhdWQiOiJ3d3cub3JnYW5pa2hhYmVybGVzbWUuY29tIn0.HYIqnMT8-dA5CG4Zh2ki2Uuorn6NbaketG9CwG2p1Co" })
+                .withHubProtocol(new signalR.protocols.msgpack.MessagePackHubProtocol())
                 .build();
-
             connection.start();
 
             $(".disabled").attr("disabled", "disabled");
@@ -76,7 +77,7 @@
                 $.each(clients, (index, item) => {
                     const user = $(".users").first().clone();
                     user.removeClass("active");
-                    user.html(item.nickName);
+                    user.html(item.NickName);
                     $("#_clients").append(user);
                 });
             });
